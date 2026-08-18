@@ -43,28 +43,8 @@ app.post("/delete/:id", (req, res) => {
     res.redirect("/");
 });
 
-app.get("/edit/:id", (req, res) => {
-    const id = Number(req.params.id);
-
-    const blog = list_of_blogs.find(blog => blog.id === id);
-
-    res.render("edit", {
-        blog: blog
-    });
-});
-
 app.post("/edit/:id", (req, res) => {
-    const id = Number(req.params.id);
-
-    const blog = list_of_blogs.find(blog => blog.id === id);
-
-    blog.title = req.body.title;
-    blog.content = req.body.content;
-
-    res.render("edit", {
-        blog: blog,
-        added: true
-    });
+    res.render("edit.ejs");
 });
 
 app.listen(port, () => {

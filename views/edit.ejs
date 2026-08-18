@@ -180,22 +180,17 @@
 
   <div class="panel">
     <h2>New entry</h2>
-    <form action="/new" method="POST">
+    <form action="/edit/<%= blog.id %>" method="POST">
       <div class="field">
         <label for="field-title">Title</label>
-        <input type="text" id="field-title" name ="title" placeholder="Give it a name" autocomplete="off">
+        <input type="text" id="field-title" name="title" value="<%= blog.title %>" autocomplete="off">
       </div>
       <div class="field">
         <label for="field-content">Entry</label>
-        <textarea id="field-content" name ="content" placeholder="Write what happened"></textarea>
+        <textarea id="field-content" name="content"><%= blog.content %></textarea>
         <div class="hint">Plain text — no formatting needed.</div>
         <br>
         <label for="date">Date</label>
-        <input type="text" id="field-content" name ="date" placeholder="eg. August 16, 2026" autocomplete="off">
-        <br>
-        <br>
-        <label for="field-title">Title</label>
-        <input type="text" id="field-content" name ="time" placeholder="eg. 6:01 pm" autocomplete="off">
       </div>
       <div id="form-error" class="error-text"></div>
       <div class="panel-actions">
